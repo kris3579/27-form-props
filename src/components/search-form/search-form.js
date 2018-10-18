@@ -6,12 +6,14 @@ class SearchForm extends React.Component {
         super(props);
 
         this.state = {};
-        this.state.subredditName = this.props.subreddit.name || '';
+        this.state.subredditName = '';
     }
 
-    handleSubmit = event => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-        this.setState({subredditName: event.target.value});
+        console.log(event.target.value);
+        await this.setState({subredditName: event.target.value});
+        console.log(`__${this.state.subredditName}__`);
         this.props.handleSubredditPick(this.state.subredditName);
     };
 
@@ -32,8 +34,8 @@ class SearchForm extends React.Component {
     }
 }
 
-SearchForm.propTypes = {
-    subreddit: PropTypes.object,
-};
+// SearchForm.propTypes = {
+//     subreddit: PropTypes.object,
+// };
 
 export default SearchForm
