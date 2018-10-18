@@ -10,11 +10,11 @@ class SearchResultList extends React.Component {
   }
 
   render() {
-
+      //console.log(this.state.redditPosts);
     return (
             <ul>
                 {
-                    this.state.redditPosts.map(() =>)
+                    // this.state.redditPosts.map(() =>)
                 }
             </ul>
     );
